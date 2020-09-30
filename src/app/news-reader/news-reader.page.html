@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar style="display:inline-block;">
+    <ion-back-button defaultHref="search" style="float:left; height:100%"></ion-back-button>
+    <ion-title style="padding-top: 3px;">Top Headlines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor ="let data of news; let i = index" class="news-reader-card" (click)="presentModal(i)">
+    <ion-card-header>
+      <ion-card-title>{{data.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{data.url}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

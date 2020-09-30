@@ -1,0 +1,7 @@
+{
+  "name": "quick-reader",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

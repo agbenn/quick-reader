@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Search
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">News Reader</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card class="news-reader-card" (click)="submitSearch('techcrunch')">
+    <img src="https://www.volitioncapital.com/wp-content/uploads/2020/04/techcrunch-logo-1.png">
+  </ion-card>
+
+  <!-- Animated Searchbar -->
+  <ion-card class="news-reader-card" (click)="submitSearch('nfl')">
+    <img src="https://static.www.nfl.com/image/private/t_photogallery/f_png/league/kj8ogg7lzgfzis9i98xy.png">
+  </ion-card>
+
+  <ion-card class="news-reader-card" (click)="submitSearch('nba')">
+    <img src="https://seeklogo.com/images/N/nba-logo-41668C66DB-seeklogo.com.png">
+  </ion-card>
+  
+
+  <ion-card class="news-reader-card" (click)="submitSearch('nhl')">
+    <img src="https://a1.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnhl.png">
+  </ion-card>
+
+
+
+</ion-content>

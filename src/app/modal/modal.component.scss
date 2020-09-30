@@ -1,0 +1,46 @@
+.news-reader-modal {
+    --background: #222;
+}
+.news-reader-progress  {
+    --knob-background: #3880ff !important;
+    --knob-size: 22px;
+    --bar-background: #3880ff !important;
+    --bar-background-active: #3880ff !important;
+    --bar-border-radius: 1;
+}
+.news-reader-close{
+    top:0px;
+    position: relative;
+    float: right;
+    padding: 3%;
+}
+.news-reader-text {
+    width:100%; 
+    height:70%; 
+    font-size:24px;
+    text-align:center;
+    top:0px;
+}
+.news-reader-text-inner {
+    text-align:center;
+    top: 50%;
+    height:100%;
+}
+.news-reader-controls {
+    bottom:0px;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+}
+.news-reader-btns {
+    width:100%;
+    text-align: center;
+}
+.news-reader-btn {
+    display: inline-block;
+
+}
+.news-reader-margin {
+    margin: auto;
+}
+
