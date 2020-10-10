@@ -14,8 +14,6 @@ import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { Component } from '@angular/core';
 
-
-
 @NgModule({
   declarations: [AppComponent, ModalComponent],
   entryComponents: [],

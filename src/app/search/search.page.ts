@@ -16,15 +16,6 @@ export class searchPage {
 
   constructor(private dataService: DataService, private router: Router, private loadingController: LoadingController) {}
    
-  async submitTopicSearch() {
-    const loading = await this.loadingController.create({
-      message: 'loading news'
-    });
-    loading.present();
-    await this.dataService.searchNewsTopic(this.topic)
-    loading.dismiss();
-    this.router.navigate(['/newsReader']);
-  }
 
   async submitSearch(searchType) {
     const loading = await this.loadingController.create({

@@ -40,13 +40,16 @@ export class ModalComponent implements OnInit {
   }
 
   startReader(){
-    this.interval = setInterval(() => { this.changeWord(); }, this.currentTimeDelay);
-    this.isStopped = false;
+    if(!this.interval){
+      this.interval = setInterval(() => { this.changeWord(); }, this.currentTimeDelay);
+      this.isStopped = false;
+    }
   }
 
   stopReader(){
     if (this.interval) {
       clearInterval(this.interval);
+      this.interval = undefined;
     }
     this.isStopped = true;
   }
@@ -59,7 +62,6 @@ export class ModalComponent implements OnInit {
 
   updateWPM(timeDelayUpdate){
 
-    console.log(timeDelayUpdate)
 
     this.currentTimeDelay = this.currentTimeDelay + timeDelayUpdate;
 
@@ -87,7 +89,6 @@ export class ModalComponent implements OnInit {
     if(this.currentIndex == this.text.length){
       this.currentIndex = this.text.length-1
     }
-    console.log(this.currentWord)
   }
 
 }
