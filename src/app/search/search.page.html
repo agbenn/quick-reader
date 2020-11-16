@@ -13,24 +13,37 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card class="news-reader-card" (click)="submitSearch('techcrunch')">
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('techcrunch')">
     <img src="https://www.volitioncapital.com/wp-content/uploads/2020/04/techcrunch-logo-1.png">
   </ion-card>
 
-  <!-- Animated Searchbar -->
-  <ion-card class="news-reader-card" (click)="submitSearch('nfl')">
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('newsOneReuters')">
+    <img src="https://cdn.iconscout.com/icon/free/png-512/reuters-283443.png">
+  </ion-card>
+
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('bbc')">
+    <img src="https://img.icons8.com/ios/452/bbc-logo.png">
+  </ion-card>
+
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('RT')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Russia-today-logo.svg/1024px-Russia-today-logo.svg.png">
+  </ion-card>
+
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('npr')">
+    <img src="https://www.prophet.com/relevantbrands-2016/wp-content/uploads/2016/10/Npr-logo.png">
+  </ion-card>
+  
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('nflReuters')">
     <img src="https://static.www.nfl.com/image/private/t_photogallery/f_png/league/kj8ogg7lzgfzis9i98xy.png">
   </ion-card>
 
-  <ion-card class="news-reader-card" (click)="submitSearch('nba')">
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('nbaReuters')">
     <img src="https://seeklogo.com/images/N/nba-logo-41668C66DB-seeklogo.com.png">
   </ion-card>
-  
 
-  <ion-card class="news-reader-card" (click)="submitSearch('nhl')">
+  <ion-card class="news-reader-card" id="news-selector" (click)="submitSearch('nhlReuters')">
     <img src="https://a1.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fmisc_logos%2F500%2Fnhl.png">
   </ion-card>
-
 
 
 </ion-content>

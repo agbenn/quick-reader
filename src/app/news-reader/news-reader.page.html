@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor ="let data of news; let i = index" class="news-reader-card" (click)="presentModal(i)">
+  <ion-card *ngFor ="let data of news; let i = index" class="news-reader-card" id="news-article" (click)="routeToReaderSelection(i)">
     <ion-card-header>
       <ion-card-title>{{data.title}}</ion-card-title>
     </ion-card-header>

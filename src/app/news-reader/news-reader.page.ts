@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { ModalController } from '@ionic/angular';
-import { ModalComponent } from '../modal/modal.component';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-news-reader',
@@ -15,7 +12,7 @@ export class NewsReaderPage implements OnInit {
   news: object;
   timeOut;
 
-  constructor(private router: Router, private dataService: DataService, public modalController: ModalController) { }
+  constructor(private router: Router, private dataService: DataService) { }
 
   async ngOnInit() {
     this.news = await this.dataService.getNews();
@@ -27,17 +24,12 @@ export class NewsReaderPage implements OnInit {
     this.news = await this.dataService.getNews()
   }
 
-  async presentModal(index) {
-    const modal = await this.modalController.create({
-      component: ModalComponent,
-      cssClass: 'news-reader-modal',
-      componentProps: { 
-        text: this.news[index].tokenized,
-      }
-    });
-
-    return await modal.present();
+  routeToReaderSelection(index) {
+    clearInterval(this.timeOut)
+    this.dataService.setNewsArticle(this.news[index])
+    this.router.navigate(['/reader-selector'])
   }
+  
   private routeHome() {
     clearInterval(this.timeOut)
     this.router.navigate(['/search'])

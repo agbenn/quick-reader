@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="reader-selector" style="float:left; height:100%"></ion-back-button>
+    <ion-title>Flash Reader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="height:100%">
+    <div style="display:inline">
+      <div class="news-reader-text">
+        <ion-content class="news-reader-text-inner">{{currentWord}}</ion-content>
+      </div>
+  
+      <div class="news-reader-controls">
+        <ion-item style="text-align:center;margin-bottom:5%;">
+          <ion-icon name="remove" class="news-reader-margin" (click)="updateWPM(10)"></ion-icon>
+          <div class="news-reader-wpm" class="news-reader-margin">{{wpm}}</div>
+          <ion-icon ion-icon name="add" class="news-reader-margin" (click)="updateWPM(-10)"></ion-icon>
+        </ion-item>
+        <div class='news-reader-btns'>
+          <div>
+            <ion-button expand="block" (click)="stopStartReader()" class="news-reader-btn" id="startStopReader">{{stopOrStart}}</ion-button>
+          </div>
+          <div>
+            <ion-button expand="block" (click)="resetReader()" class="news-reader-btn" id="resetReader">Reset</ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

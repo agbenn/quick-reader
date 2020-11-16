@@ -9,14 +9,15 @@
     --bar-border-radius: 1;
 }
 .news-reader-close{
+    font-size: 24px;
     top:0px;
     position: relative;
-    float: right;
+    float: left;
     padding: 3%;
 }
 .news-reader-text {
     width:100%; 
-    height:70%; 
+    height:40%; 
     font-size:24px;
     text-align:center;
     top:0px;
@@ -29,8 +30,8 @@
 .news-reader-controls {
     bottom:0px;
     width: 100%;
-    height: 30%;
     position: absolute;
+    margin-bottom: 30%;
 }
 .news-reader-btns {
     width:100%;
@@ -38,7 +39,7 @@
 }
 .news-reader-btn {
     display: inline-block;
-
+    width: 40%;
 }
 .news-reader-margin {
     margin: auto;

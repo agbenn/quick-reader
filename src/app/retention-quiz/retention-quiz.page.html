@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="reader-selector" style="float:left; height:100%"></ion-back-button>
+    <ion-title>Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <div style="padding-top:15%">
+      <ion-item class="news-reader-question">{{question}}</ion-item>
+      <div class="news-reader-answers">
+        <ion-button id="answerSelector" *ngFor ="let ans of answers; let i = index" (click)="checkAnswer(i)" [ngClass]="(selectedIndex ===  i && isRightAnswer) ? 'news-reader-correct' : (selectedIndex ===  i && !isRightAnswer) ? 'news-reader-incorrect' : 'news-reader-answer'">{{ans}}</ion-button>
+      </div>
+    </div>
+    <div class='news-reader-btns' style="padding-top:5%">
+      <ion-button *ngIf="isPrevQuestion" expand="block" (click)="prevQuestion()" class="news-reader-btn" id="prevQuestion">Previous Question</ion-button>
+      <ion-button *ngIf="isNextQuestion" expand="block" (click)="nextQuestion()" class="news-reader-btn" id="nextQuestion">Next Question</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="newsReader" style="float:left; height:100%"></ion-back-button>
+    <ion-title>Select Reader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" (click)="presentReader('content')" class="reader-selector-btn">Original Content</ion-button>
+  <ion-button expand="block" (click)="presentReader('flash')" class="reader-selector-btn">Flash Reader</ion-button>
+  <ion-button expand="block" (click)="presentReader('speed')" class="reader-selector-btn">Speed Reader</ion-button>
+  <ion-button expand="block" (click)="presentReader('quiz')" class="reader-selector-btn">Retention Quiz</ion-button>
+</ion-content>

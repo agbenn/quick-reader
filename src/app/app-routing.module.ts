@@ -15,6 +15,22 @@ const routes: Routes = [
     path: 'newsReader',
     loadChildren: './news-reader/news-reader.module#NewsReaderPageModule'
   },
+  {
+    path: 'reader-selector',
+    loadChildren:'./reader-selection/reader-selection.module#ReaderSelectionPageModule'
+  },
+  {
+    path: 'content-reader',
+    loadChildren: './content-reader/content-reader.module#ContentReaderPageModule'
+  },
+  {
+    path: 'retention-quiz',
+    loadChildren: './retention-quiz/retention-quiz.module#RetentionQuizPageModule'
+  },
+  {
+    path: 'flash-reader',
+    loadChildren: './flashreader/flashreader.module#FlashreaderPageModule'
+  },
 ];
 @NgModule({
   imports: [

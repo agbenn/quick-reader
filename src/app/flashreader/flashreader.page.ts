@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 import { DataService } from '../services/data.service';
 
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss'],
+  selector: 'app-flashreader',
+  templateUrl: './flashreader.page.html',
+  styleUrls: ['./flashreader.page.scss'],
 })
-export class ModalComponent implements OnInit {
+export class FlashreaderPage implements OnInit {
 
   text;
   currentWord: string;
@@ -19,12 +18,17 @@ export class ModalComponent implements OnInit {
   wpm;
   isStopped = true;
   interval;
+  isReader = true;
+  borderColor = '#FFFFFF';
+  stopOrStart = 'Start';
 
-  constructor(public modalController: ModalController, private dataService: DataService,) { }
+  constructor(private dataService: DataService) { }
 
   async ngOnInit() {
     this.currentTimeDelay = await this.dataService.getCurrentTimeDelay();
     this.wpm = Math.round(60000/(this.currentTimeDelay))
+    var newsData = await this.dataService.getNewsArticle()
+    this.text = newsData.tokenized
   }
 
   ionicViewDidLeave(){
@@ -32,11 +36,15 @@ export class ModalComponent implements OnInit {
       clearInterval(this.interval);
     }  
   }
-  closeModal(){
-    if (this.interval) {
-      clearInterval(this.interval);
-    }  
-    this.modalController.dismiss()
+
+  stopStartReader(){
+    if (this.stopOrStart == 'Start') {
+      this.startReader()
+      this.stopOrStart = 'Stop'
+    } else {
+      this.stopReader()
+      this.stopOrStart = 'Start'
+    }
   }
 
   startReader(){
@@ -62,10 +70,8 @@ export class ModalComponent implements OnInit {
 
   updateWPM(timeDelayUpdate){
 
-
     this.currentTimeDelay = this.currentTimeDelay + timeDelayUpdate;
 
-    
     if(this.currentTimeDelay < 10){
       this.currentTimeDelay = 10
     }

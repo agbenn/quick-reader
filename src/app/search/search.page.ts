@@ -3,8 +3,6 @@ import { DataService } from '../services/data.service';
 import { Router } from '@angular/router';
 import {LoadingController} from '@ionic/angular';
 
-
-
 @Component({
   selector: 'app-search',
   templateUrl: 'search.page.html',
